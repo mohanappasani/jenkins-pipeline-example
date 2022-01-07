@@ -1,15 +1,6 @@
 pipeline {
     agent any
-    tools {
-         maven 'MavenTest' 
-    }
     stages {
-        stage('Initialize'){
-            steps{
-                echo "PATH = ${MAVEN_HOME}/bin:${PATH}"
-                echo "M2_HOME = /opt/maven"
-            }
-        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
