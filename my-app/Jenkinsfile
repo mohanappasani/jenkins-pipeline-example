@@ -5,7 +5,7 @@ pipeline {
 
             steps {
                 withMaven {
-                    bat 'mvn clean compile'
+                    bat 'mvn -B -DskipTests clean package'
                 }
             }
         }
